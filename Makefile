@@ -19,4 +19,8 @@ $(distdir):
 	cp src/*.cpp $(distdir)/src
 	cp src/*.hh $(distdir)/src
 
-.PHONE: all clean dist
+FORCE:
+	-rm $(distdir).tar.gz >/dev/null 2>&1
+	-rm -rf $(distdir) >/dev/null 2>&1
+
+.PHONY: FORCE all clean dist
